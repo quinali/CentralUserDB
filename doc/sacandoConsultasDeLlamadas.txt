@@ -1,0 +1,29 @@
+SELECT sid,token,max(orderLlamada) as nLlamadas,fechaNuevoContacto
+      FROM faccentralanswer 
+      WHERE fechaNuevoContacto between '2018-01-01' and '2018-02-01' and sid=129288
+      GROUP BY sid,token;
+      
+      
+      
+select * from survey_129288;
+   
+
+select * from questions where sid=129288 ;   
+
+select CONCAT(sid,'X',gid,'X',parent_qid,'X',title) from questions where sid=129288 and trim(question)='Nombre persona de contacto';
+
+
+select * from questions where sid=129288 and trim(question)='Nombre persona de contacto';
+
+
+
+
+select
+	svlng.surveyls_title,
+	fac.sid,
+	fac.fechaNuevoContacto,
+	fac.nLlamadas, tk.* 
+	FROM faccentralanswer fac 
+	LEFT JOIN tokens_129288 tk ON fac.token = tk.token 
+	LEFT JOIN surveys_languagesettings svlng ON fac.sid = svlng.surveyls_survey_id 
+	WHERE fac.sid=129288;
