@@ -3,7 +3,6 @@ package com.mkp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.StringTokenizer;
 
 public class FacCentralAnswer {
 	
@@ -47,8 +46,6 @@ public class FacCentralAnswer {
 
 			e.printStackTrace();
 		}	
-		
-		System.out.println(" Localizada la fecha "+fecha);
 		
 		return fecha;
 	}
@@ -105,11 +102,5 @@ public class FacCentralAnswer {
 				+ " sid="+sid  
 				+ " pregunta="+ conclusionLlamada;
 	}
-	
-	public String getInsertSQL(){
-		
-		return "INSERT INTO faccentralanswer (sid,idRegistro, token, orderLlamada, conclusionLlamada) VALUES"
-				+ " ("+sid+","+idRegistro+","+token+","+ordenLlamada+",'"+conclusionLlamada+"')";
-		
-	}
+
 }
